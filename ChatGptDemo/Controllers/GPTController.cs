@@ -26,7 +26,7 @@ namespace ChatGptDemo.Controllers
             {
                 using (var httpReq = new HttpRequestMessage(HttpMethod.Post, "https://api.openai.com/v1/completions"))
                 {
-                    httpReq.Headers.Add("Authorization", "Bearer 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");
+                    httpReq.Headers.Add("Authorization", "Bearer {Secret Key}");
                     string requestString = JsonSerializer.Serialize(completionRequest);
                     httpReq.Content = new StringContent(requestString, Encoding.UTF8, "application/json");
                     using (HttpResponseMessage? httpResponse = await httpClient.SendAsync(httpReq))
